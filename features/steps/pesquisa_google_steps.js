@@ -38,6 +38,7 @@ When('clique na tecla enter', async function() {
 });
 
 Then('deve aparecer em primeiro lugar o link {string}', async function(string) {
-   const attribute = await driver.findElement(By.xpath('//*[@id="rso"]/div[1]/div/div[1]/div/div/div[1]/a')).getAttribute('href');
-   expect(string).to.be.equals(attribute);
+    const hrefXpath = '//*[@id="rso"]/div[1]/div/div[1]/div/div/div[1]/a';
+    const attribute = await driver.findElement(By.xpath(hrefXpath)).getAttribute('href');
+    expect(string).to.be.equals(attribute);
 });
