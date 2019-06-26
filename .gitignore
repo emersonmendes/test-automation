@@ -59,3 +59,6 @@ typings/
 
 # next.js build output
 .next
+
+report/cucumber_report.html
+report/cucumber_report.json
