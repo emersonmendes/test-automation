@@ -1,13 +1,15 @@
 "use strict";
 
 const { AfterAll, BeforeAll, Given, When, Then } = require('cucumber');
-const { Builder, By, Key, until } = require('selenium-webdriver');
+const { By, Key, until } = require('selenium-webdriver');
 const { expect } = require("chai");
+const { Utils } = require('../support/utils');
 
 let driver;
 
 BeforeAll(async function(){
-    driver = await new Builder().forBrowser('chrome').build();
+    const utils = new Utils();
+    driver = utils.driver;
 });
 
 AfterAll(async function() {
