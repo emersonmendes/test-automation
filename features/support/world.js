@@ -4,7 +4,7 @@ const { setWorldConstructor } = require("cucumber");
 
 class CustomWorld {
 
-    constructor() {        
+    constructor() { 
     }
 
     loggin(user) {

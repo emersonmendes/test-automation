@@ -6,36 +6,36 @@ const { expect } = require("chai");
 
 let driver;
 
-BeforeAll(async () => {
+BeforeAll(async function(){
     driver = await new Builder().forBrowser('chrome').build();
 });
 
-AfterAll(() => {
-    driver.quit();
+AfterAll(async function() {
+    await driver.quit();
 });
 
-Given('que o usuario {string} esteja logado', function(user) {
-    this.loggin(user);
+Given('que o usuario {string} esteja logado', async function(user) {
+    await this.loggin(user);
 });
 
-Given('que o usuário acesse a pagina do google', () => {
-    driver.get('http://www.google.com');
+Given('que o usuário acesse a pagina do google', async function() {
+    await driver.get('http://www.google.com');
 });
 
-When('clica na caixa de pesquisa', () => {
-    driver.findElement(By.name('q')).click();
+When('clica na caixa de pesquisa', async function() {
+    await driver.findElement(By.name('q')).click();
 });
 
-When('digite {string}', (text) => {
-    driver.findElement(By.name('q')).sendKeys(text);
+When('digite {string}', async function(text) {
+    await driver.findElement(By.name('q')).sendKeys(text);
 });
 
-When('clique na tecla enter', async () => {
+When('clique na tecla enter', async function() {
     await driver.findElement(By.name('q')).sendKeys(Key.RETURN);
     await driver.wait(until.titleContains(' - Pesquisa Google'), 1000);
 });
 
-Then('deve aparecer em primeiro lugar o link {string}', async (string) => {
+Then('deve aparecer em primeiro lugar o link {string}', async function(string) {
    const attribute = await driver.findElement(By.xpath('//*[@id="rso"]/div[1]/div/div[1]/div/div/div[1]/a')).getAttribute('href');
    expect(string).to.be.equals(attribute);
 });
