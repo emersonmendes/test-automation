@@ -12,8 +12,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "./node_modules/.bin/cucumber-js",
-    "test2": "./node_modules/.bin/cucumber-js features/ -f summary -f json:report/cucumber_report.json",
+    "test2": "./node_modules/.bin/cucumber-js",
+    "test": "./node_modules/.bin/cucumber-js features/ -f summary -f json:report/cucumber_report.json",
     "debug": "node --inspect-brk=5858 ./node_modules/.bin/cucumber-js"
   },
   "author": "",
