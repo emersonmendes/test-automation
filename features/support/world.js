@@ -8,7 +8,7 @@ class CustomWorld {
     }
 
     loggin(user) {
-        //efetuar login
+        
     }
 
 }

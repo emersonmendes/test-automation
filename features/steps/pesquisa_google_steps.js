@@ -32,7 +32,7 @@ When('digite {string}', async function(text) {
     await driver.findElement(By.name('q')).sendKeys(text);
 });
 
-When('clique na tecla enter', async function() {
+When('pressionar a tecla enter', async function() {
     await driver.findElement(By.name('q')).sendKeys(Key.RETURN);
     await driver.wait(until.titleContains(' - Pesquisa Google'), 1000);
 });
